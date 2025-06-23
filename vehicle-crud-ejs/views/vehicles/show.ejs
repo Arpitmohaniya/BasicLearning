@@ -1,0 +1,15 @@
+<h1 class="mb-3"><%= vehicle.name %></h1>
+<h4 class="text-muted"><%= vehicle.brand %></h4>
+<p><strong>Price:</strong> ₹<%= vehicle.price %></p>
+
+<% if (vehicle.image) { %>
+  <img src="<%= vehicle.image %>" alt="<%= vehicle.name %>" class="img-fluid rounded mb-3" />
+<% } %>
+
+<p><strong>Description:</strong> <%= vehicle.desc %></p>
+
+<a href="/vehicles/<%= vehicle._id %>/edit" class="btn btn-warning">Edit</a>
+<form action="/vehicles/<%= vehicle._id %>?_method=DELETE" method="POST" class="d-inline">
+  <button type="submit" class="btn btn-danger">Delete</button>
+</form>
+<a href="/vehicles" class="btn btn-secondary">Back</a>

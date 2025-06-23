@@ -1,0 +1,31 @@
+<h1 class="mb-4">Add New Vehicle</h1>
+
+<form action="/vehicles" method="POST" enctype="multipart/form-data" class="p-4 border rounded shadow-sm bg-light">
+  <div class="mb-3">
+    <label for="name" class="form-label">Vehicle Name</label>
+    <input id="name" name="name" type="text" class="form-control" placeholder="Enter vehicle name" required />
+  </div>
+
+  <div class="mb-3">
+    <label for="brand" class="form-label">Brand</label>
+    <input id="brand" name="brand" type="text" class="form-control" placeholder="Enter brand" required />
+  </div>
+
+  <div class="mb-3">
+    <label for="price" class="form-label">Price (₹)</label>
+    <input id="price" name="price" type="number" class="form-control" placeholder="Enter price" required />
+  </div>
+
+  <div class="mb-3">
+    <label for="image" class="form-label">Upload Image</label>
+    <input id="image" type="file" name="image" class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label for="desc" class="form-label">Description</label>
+    <textarea id="desc" name="desc" rows="4" class="form-control" placeholder="Enter description"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-success">Create Vehicle</button>
+  <a href="/vehicles" class="btn btn-secondary">Cancel</a>
+</form>

@@ -1,0 +1,25 @@
+<h1 class="mb-4"><%= vehicle ? 'Edit' : 'Add New' %> Vehicle</h1>
+<form action="<%= vehicle ? `/vehicles/${vehicle._id}?_method=PUT` : '/vehicles' %>" method="POST" enctype="multipart/form-data">
+  <div class="mb-3">
+    <label class="form-label">Vehicle Name</label>
+    <input name="name" class="form-control" value="<%= vehicle?.name || '' %>" required />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Brand</label>
+    <input name="brand" class="form-control" value="<%= vehicle?.brand || '' %>" required />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Price</label>
+    <input name="price" type="number" class="form-control" value="<%= vehicle?.price || '' %>" required />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Image</label>
+    <input type="file" name="image" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Description</label>
+    <textarea name="desc" class="form-control"><%= vehicle?.desc || '' %></textarea>
+  </div>
+  <button type="submit" class="btn btn-success"><%= vehicle ? 'Update' : 'Create' %></button>
+  <a href="/vehicles" class="btn btn-secondary">Cancel</a>
+</form>
